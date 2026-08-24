@@ -54,6 +54,17 @@ Harald Skarke using PALP. See [DATA_LICENSES.md](DATA_LICENSES.md) for the
 available provenance and an important licensing caveat that must be resolved
 before the first public release.
 
+## Releases
+
+Publishing a GitHub Release runs the `Release` GitHub Actions workflow.  It
+checks that the tag matches the package version, builds and validates the wheel
+and source distribution, smoke-tests the wheel in a clean environment,
+attaches both artifacts to the GitHub Release, and publishes them to PyPI
+through Trusted Publishing.  The Release tag must be `20170220.0` or
+`v20170220.0`.  Configure a PyPI Trusted Publisher for this repository, the
+`release.yml` workflow, and the `pypi` environment before the first release.
+Do not publish a release until the data-license caveat above has been resolved.
+
 ## Development
 
 ```console
