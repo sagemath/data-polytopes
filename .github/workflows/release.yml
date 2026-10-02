@@ -36,9 +36,9 @@ jobs:
           python tools/check_artifacts.py dist/*.whl dist/*.tar.gz
       - name: Smoke-test the wheel in a clean environment
         run: |
-          python -m venv /tmp/sage-data-polytopes-smoke
-          /tmp/sage-data-polytopes-smoke/bin/python -m pip install --no-deps dist/*.whl
-          /tmp/sage-data-polytopes-smoke/bin/python -c "import sage_data_polytopes as d; d.verify_data(); assert d.reflexive_polytopes(3).is_file()"
+          python -m venv /tmp/sagemath-data-polytopes-smoke
+          /tmp/sagemath-data-polytopes-smoke/bin/python -m pip install --no-deps dist/*.whl
+          /tmp/sagemath-data-polytopes-smoke/bin/python -c "import sage_data_polytopes as d; d.verify_data(); assert d.reflexive_polytopes(3).is_file()"
       - uses: actions/upload-artifact@v7
         with:
           name: release-dist
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/sage-data-polytopes
+      url: https://pypi.org/p/sagemath-data-polytopes
     permissions:
       id-token: write
     steps:

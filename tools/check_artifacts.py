@@ -9,7 +9,8 @@ import zipfile
 from pathlib import Path
 
 
-VERSION = "20170220.0"
+VERSION = "20170220.1"
+DISTRIBUTION = "sagemath_data_polytopes"
 PACKAGE = "sage_data_polytopes"
 DATA_FILES = {
     "Full2d/zzdb.info",
@@ -48,7 +49,7 @@ def check_wheel(path: Path) -> None:
         names = set(archive.namelist())
     assert _wheel_data(names) == DATA_FILES
     assert f"{PACKAGE}/__init__.py" in names
-    dist_info = f"{PACKAGE}-{VERSION}.dist-info"
+    dist_info = f"{DISTRIBUTION}-{VERSION}.dist-info"
     assert f"{dist_info}/METADATA" in names
     assert f"{dist_info}/licenses/LICENSE" in names
     assert f"{dist_info}/licenses/DATA_LICENSES.md" in names
@@ -58,7 +59,7 @@ def check_sdist(path: Path) -> None:
     with tarfile.open(path, "r:gz") as archive:
         names = {member.name for member in archive.getmembers() if member.isfile()}
     assert _sdist_data(names) == DATA_FILES
-    root = f"sage_data_polytopes-{VERSION}"
+    root = f"{DISTRIBUTION}-{VERSION}"
     for name in (
         "pyproject.toml",
         "MANIFEST.in",

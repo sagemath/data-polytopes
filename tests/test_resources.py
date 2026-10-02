@@ -31,8 +31,8 @@ EXPECTED_FILES = {
 
 
 def test_version() -> None:
-    assert data.__version__ == "20170220.0"
-    assert version("sage-data-polytopes") == data.__version__
+    assert data.__version__ == "20170220.1"
+    assert version("sagemath-data-polytopes") == data.__version__
 
 
 def test_manifest_and_hashes() -> None:

@@ -22,7 +22,7 @@ try:  # ``importlib.resources.abc`` was added after Python 3.9.
 except ImportError:  # pragma: no cover - exercised only on Python 3.9/3.10
     from importlib.abc import Traversable  # type: ignore[attr-defined,no-redef]
 
-__version__ = "20170220.0"
+__version__ = "20170220.1"
 
 DATA_FILES = (
     "Full2d/zzdb.info",
@@ -161,7 +161,7 @@ def resource_path(*parts: Union[str, os.PathLike[str]]) -> Iterator[Path]:
         with resources.as_file(target) as path:
             yield path
         return
-    with TemporaryDirectory(prefix="sage-data-polytopes-") as temporary:
+    with TemporaryDirectory(prefix="sagemath-data-polytopes-") as temporary:
         path = Path(temporary) / target.name
         _copy_directory(target, path)
         yield path

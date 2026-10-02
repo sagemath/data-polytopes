@@ -12,7 +12,7 @@ two- and three-dimensional reflexive polytopes. It states that the list of
 three-dimensional polytopes was originally obtained by Maximilian Kreuzer and
 Harald Skarke using their PALP software, and identifies this upstream page:
 
-<http://hep.itp.tuwien.ac.at/~kreuzer/CY/CYpalp.html>
+<https://hep.itp.tuwien.ac.at/~kreuzer/CY/CYpalp.html>
 
 That package description labels the license as `GPL`. However, SageMath's
 top-level `COPYING.txt` separately records `polytopes_db` as `None (database)`.

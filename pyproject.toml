@@ -3,8 +3,8 @@ requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sage-data-polytopes"
-version = "20170220.0"
+name = "sagemath-data-polytopes"
+version = "20170220.1"
 description = "Databases of two- and three-dimensional reflexive polytopes for SageMath"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -23,9 +23,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/cxzhong/sage-data-polytopes"
-Repository = "https://github.com/cxzhong/sage-data-polytopes"
-Issues = "https://github.com/cxzhong/sage-data-polytopes/issues"
+Homepage = "https://github.com/sagemath/data-polytopes"
+Repository = "https://github.com/sagemath/data-polytopes"
+Issues = "https://github.com/sagemath/data-polytopes/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

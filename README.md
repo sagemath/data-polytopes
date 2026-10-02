@@ -1,6 +1,6 @@
-# sage-data-polytopes
+# sagemath-data-polytopes
 
-`sage-data-polytopes` packages the SageMath databases of two- and
+`sagemath-data-polytopes` packages the SageMath databases of two- and
 three-dimensional reflexive lattice polytopes as an ordinary, pure-Python
 distribution. It has no dependency on SageMath and never accesses the network
 at build time or run time.
@@ -16,8 +16,10 @@ The much larger four-dimensional database is deliberately out of scope.
 ## Installation
 
 ```console
-python -m pip install sage-data-polytopes
+python -m pip install sagemath-data-polytopes
 ```
+
+The Python import name is `sage_data_polytopes`.
 
 ## Resource API
 
@@ -50,7 +52,7 @@ by the dimension-specific helpers.
 ## Data provenance and licensing
 
 The three-dimensional list was originally obtained by Maximilian Kreuzer and
-Harald Skarke using PALP. See [DATA_LICENSES.md](DATA_LICENSES.md) for the
+Harald Skarke using PALP. See [DATA_LICENSES.md](https://github.com/sagemath/data-polytopes/blob/main/DATA_LICENSES.md) for the
 available provenance and an important licensing caveat that must be resolved
 before the first public release.
 
@@ -60,9 +62,11 @@ Publishing a GitHub Release runs the `Release` GitHub Actions workflow.  It
 checks that the tag matches the package version, builds and validates the wheel
 and source distribution, smoke-tests the wheel in a clean environment,
 attaches both artifacts to the GitHub Release, and publishes them to PyPI
-through Trusted Publishing.  The Release tag must be `20170220.0` or
-`v20170220.0`.  Configure a PyPI Trusted Publisher for this repository, the
+through Trusted Publishing.  The Release tag must be `20170220.1` or
+`v20170220.1`.  Configure a PyPI Trusted Publisher for this repository, the
 `release.yml` workflow, and the `pypi` environment before the first release.
+The PyPI project name is `sagemath-data-polytopes`, the GitHub owner is
+`sagemath`, and the repository name is `data-polytopes`.
 Do not publish a release until the data-license caveat above has been resolved.
 
 ## Development
