@@ -5,7 +5,7 @@ from importlib.metadata import version
 
 import pytest
 
-import sage_data_polytopes as data
+import polytope_databases as data
 
 
 EXPECTED_FILES = {
@@ -31,8 +31,8 @@ EXPECTED_FILES = {
 
 
 def test_version() -> None:
-    assert data.__version__ == "20170220.1"
-    assert version("sagemath-data-polytopes") == data.__version__
+    assert data.__version__ == "20170220.2"
+    assert version("polytope-databases") == data.__version__
 
 
 def test_manifest_and_hashes() -> None:

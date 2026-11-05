@@ -1,6 +1,6 @@
 include LICENSE
 include DATA_LICENSES.md
 include README.md
-recursive-include src/sage_data_polytopes/data *
+recursive-include src/polytope_databases/data *
 recursive-include tests *.py
 include tools/check_artifacts.py

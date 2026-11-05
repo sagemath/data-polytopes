@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from sage_data_polytopes import open_reflexive_polytopes, palp_database
+from polytope_databases import open_reflexive_polytopes, palp_database
 
 
 def _catalogue_size(dimension: int) -> int:
