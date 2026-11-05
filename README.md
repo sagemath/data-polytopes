@@ -1,6 +1,6 @@
-# sagemath-data-polytopes
+# polytope-databases
 
-`sagemath-data-polytopes` packages the SageMath databases of two- and
+`polytope-databases` packages the SageMath databases of two- and
 three-dimensional reflexive lattice polytopes as an ordinary, pure-Python
 distribution. It has no dependency on SageMath and never accesses the network
 at build time or run time.
@@ -15,11 +15,13 @@ The much larger four-dimensional database is deliberately out of scope.
 
 ## Installation
 
+Requires Python 3.13 or newer.
+
 ```console
-python -m pip install sagemath-data-polytopes
+python -m pip install polytope-databases
 ```
 
-The Python import name is `sage_data_polytopes`.
+The Python import name is `polytope_databases`.
 
 ## Resource API
 
@@ -27,7 +29,7 @@ The API is based on `importlib.resources`, so callers do not need to know where
 the wheel was installed:
 
 ```python
-from sage_data_polytopes import (
+from polytope_databases import (
     open_reflexive_polytopes,
     palp_database_path,
     reflexive_polytopes,
@@ -62,10 +64,10 @@ Publishing a GitHub Release runs the `Release` GitHub Actions workflow.  It
 checks that the tag matches the package version, builds and validates the wheel
 and source distribution, smoke-tests the wheel in a clean environment,
 attaches both artifacts to the GitHub Release, and publishes them to PyPI
-through Trusted Publishing.  The Release tag must be `20170220.1` or
-`v20170220.1`.  Configure a PyPI Trusted Publisher for this repository, the
+through Trusted Publishing.  The Release tag must be `20170220.2` or
+`v20170220.2`.  Configure a PyPI Trusted Publisher for this repository, the
 `release.yml` workflow, and the `pypi` environment before the first release.
-The PyPI project name is `sagemath-data-polytopes`, the GitHub owner is
+The PyPI project name is `polytope-databases`, the GitHub owner is
 `sagemath`, and the repository name is `data-polytopes`.
 Do not publish a release until the data-license caveat above has been resolved.
 
@@ -77,3 +79,10 @@ python -m pytest
 python -m build
 python tools/check_artifacts.py dist/*.whl dist/*.tar.gz
 ```
+
+## Migration from the previous package
+
+This distribution replaces `sagemath-data-polytopes`. Install `polytope-databases` and change
+imports from `sage_data_polytopes` to `polytope_databases`. The resource helpers and
+bundled database contents are unchanged. The two distributions use separate
+import namespaces and can coexist while consumers migrate.

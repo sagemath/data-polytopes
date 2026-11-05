@@ -9,9 +9,9 @@ import zipfile
 from pathlib import Path
 
 
-VERSION = "20170220.1"
-DISTRIBUTION = "sagemath_data_polytopes"
-PACKAGE = "sage_data_polytopes"
+VERSION = "20170220.2"
+DISTRIBUTION = "polytope_databases"
+PACKAGE = "polytope_databases"
 DATA_FILES = {
     "Full2d/zzdb.info",
     "Full2d/zzdb.v03",

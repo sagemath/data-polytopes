@@ -13,16 +13,12 @@ import operator
 import shutil
 from contextlib import contextmanager
 from importlib import resources
+from importlib.resources.abc import Traversable
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import IO, Iterator, Mapping, Union
 
-try:  # ``importlib.resources.abc`` was added after Python 3.9.
-    from importlib.resources.abc import Traversable
-except ImportError:  # pragma: no cover - exercised only on Python 3.9/3.10
-    from importlib.abc import Traversable  # type: ignore[attr-defined,no-redef]
-
-__version__ = "20170220.1"
+__version__ = "20170220.2"
 
 DATA_FILES = (
     "Full2d/zzdb.info",
@@ -161,7 +157,7 @@ def resource_path(*parts: Union[str, os.PathLike[str]]) -> Iterator[Path]:
         with resources.as_file(target) as path:
             yield path
         return
-    with TemporaryDirectory(prefix="sagemath-data-polytopes-") as temporary:
+    with TemporaryDirectory(prefix="polytope-databases-") as temporary:
         path = Path(temporary) / target.name
         _copy_directory(target, path)
         yield path
