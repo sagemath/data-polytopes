@@ -13,14 +13,10 @@ import operator
 import shutil
 from contextlib import contextmanager
 from importlib import resources
+from importlib.resources.abc import Traversable
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import IO, Iterator, Mapping, Union
-
-try:  # ``importlib.resources.abc`` was added after Python 3.9.
-    from importlib.resources.abc import Traversable
-except ImportError:  # pragma: no cover - exercised only on Python 3.9/3.10
-    from importlib.abc import Traversable  # type: ignore[attr-defined,no-redef]
 
 __version__ = "20170220.2"
 

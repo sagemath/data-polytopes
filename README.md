@@ -15,6 +15,8 @@ The much larger four-dimensional database is deliberately out of scope.
 
 ## Installation
 
+Requires Python 3.13 or newer.
+
 ```console
 python -m pip install polytope-databases
 ```
